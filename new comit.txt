@@ -1,0 +1,32 @@
+# Grid Trading Strategy – ETH/USDC
+
+**Date:** 2025‑11‑11  
+**Author:** friiite76  
+
+## 1. Stratégie  
+Utilisation d’une stratégie de “grid trading” sur la paire ETH/USDC sur un marché latéral/modéré.
+
+## 2. Paramètres  
+- Nombre de niveaux de grille : 12  
+- Prix supérieur (take‑profit de grille) : 2 400 USDC  
+- Prix inférieur (stop / borne basse) : 1 800 USDC  
+- Taille de chaque ordre : 0.05 ETH  
+- Intervalle entre les ordres : (2 400 − 1 800) / 12 = 50 USDC  
+- Temps de rafraîchissement : toutes les 60 s  
+- Stop‑loss global : non mis en place  
+- Take‑profit global : non mis en place (on joue la grille complète)  
+
+## 3. Conditions de marché idéales  
+- Plage de prix stable entre ~1 900 et ~2 300 USDC  
+- Moyenne quotidienne de volatilité modérée (ATR sur 14 jours ≈ 8‑12%)  
+- Absence de forte tendance (ni hausse ni baisse extrême)  
+
+## 4. Risques & ajustements  
+- Si la tendance devient fortement haussière ou baissière, la grille peut être désavantagée → prévoir un mécanisme de désactivation.  
+- Filtrer les paires peu liquides pour éviter slippage ou exécution partielle.  
+- Revoir la taille de l’ordre et l’intervalle si la volatilité augmente : ex. réduire à 0.02 ETH ou élargir les intervalles.
+
+## 5. Prochaine étape  
+- Backtesting rapide sur les 90 derniers jours de la paire ETH/USDC.  
+- Enregistrer les résultats (profit/loss, nombre de trades, max drawdown).  
+- En fonction du backtest, créer un script Python de grille automatisée à intégrer dans le bot.  
